@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./images/extension_icon (1).png" type="image/png">
+        <link rel="apple-touch-icon" href="./images/extension_icon (1).png">
+        <meta name="description" content="iCheap - Digital Store for E-Wallet, Game Topup, and Premium Apps. Fast, Secure, and Affordable Services.">
+        <meta name="keywords" content="iCheap, Digital Store, Top Up E-Wallet, Game Topup, Premium Apps, Fast Service, Secure Payment, Convert E-Wallet">
+        <meta name="author" content="iCheap Team">
+        <meta name="theme-color" content="#090909"> 
+        <title>iCheap - Digital Store</title>
+      <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <a href="#" class="store-logo">E-wallet</a>
+            <div style="position: relative;">
+                <button class="menu-button" onclick="toggleDropdown()"><i class="fa-solid fa-ellipsis"></i></button>
+                <div class="dropdown" id="dropdown">
+                    <a href="https://t.me/ihelpcenter" class="dropdown-item">Bantuan?
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </a>
+                    <a href="https://take.app/id/icheap/reviews" class="dropdown-item">Testimoni
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <div class="wallet-cards">
+                <div class="wallet-card">
+                    <img src="https://images.tokopedia.net/img/payment/icons/dana.png" alt="DANA" class="wallet-icon">
+                    <span class="wallet-name">DANA</span>
+                </div>
+                <div class="wallet-card gopay-card">
+                    <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/gopay.png" alt="GoPay" class="wallet-icon">
+                    <span class="wallet-name">GoPay</span>
+                </div>
+                <div class="wallet-card">
+                    <img src="https://images.tokopedia.net/img/payment/icons/ovo.png" alt="Ovo" class="wallet-icon">
+                    <span class="wallet-name">OVO</span>
+                </div>
+                <div class="wallet-card">
+                    <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/linkaja.png" alt="LinkAja" class="wallet-icon">
+                    <span class="wallet-name">LinkAja</span>
+                </div>
+                <div class="wallet-card">
+                    <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/shopeepay.png" alt="ShopeePay" class="wallet-icon">
+                    <span class="wallet-name">ShopeePay</span>
+                </div>
+                <div class="wallet-card">
+                    <img src="https://buylink.s3.ap-southeast-3.amazonaws.com/default/logo-operator/maxim.svg" alt="Maxim" class="wallet-icon">
+                    <span class="wallet-name">Maxim</span>
+                </div>
+                </div>
+        </section>
+        <!-- Verify this structure is in your HTML body -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 id="modalTitle"></h3>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div class="amount-grid">
+                <button class="amount-btn" data-amount="10000">Rp 10.000</button>
+                <button class="amount-btn" data-amount="15000">Rp 15.000</button>
+                <button class="amount-btn" data-amount="20000">Rp 20.000</button>
+                <button class="amount-btn" data-amount="25000">Rp 25.000</button>
+                <button class="amount-btn" data-amount="50000">Rp 50.000</button>
+                <button class="amount-btn" data-amount="100000">Rp 100.000</button>
+                <button class="amount-btn" data-amount="200000">Rp 200.000</button>
+                <button class="amount-btn" data-amount="250000">Rp 250.000</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+
+        feather.replace();
+
+
+        function closeModal() {
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modalContainer = modalOverlay.querySelector('.modal-container');
+            
+            modalContainer.style.bottom = '-100%';
+            modalOverlay.classList.remove('active');
+            
+            // Hide overlay after animation completes
+            setTimeout(() => {
+                modalOverlay.style.display = 'none';
+            }, 300);
+        }
+
+        function buyNow() {
+            const modal = document.getElementById('modal');
+            const link = modal.getAttribute('data-link');
+            window.open(link, '_blank');
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add smooth entrance animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        function initializeWalletCards() {
+            const walletCards = document.querySelectorAll('.wallet-card');
+            walletCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const walletName = this.querySelector('.wallet-name').textContent;
+                    showModal(walletName);
+                });
+            });
+        }
+
+        function showModal(walletName) {
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modalContainer = modalOverlay.querySelector('.modal-container');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modalTitle.textContent = `Top Up ${walletName}`;
+            modalOverlay.style.display = 'block';
+            
+            // Add small delay to trigger animation
+            setTimeout(() => {
+                modalOverlay.classList.add('active');
+                modalContainer.style.bottom = '0';
+            }, 10);
+        }
+
+        // Initialize wallet cards when the page loads
+        document.addEventListener('DOMContentLoaded', initializeWalletCards);
+
+        // Handle amount button clicks
+        document.querySelector('.amount-grid').addEventListener('click', function(e) {
+            if (e.target.classList.contains('amount-btn')) {
+                const amount = e.target.getAttribute('data-amount');
+                const walletName = document.getElementById('modalTitle').textContent.replace('Top Up ', '');
+                
+                // Generate URL based on wallet and amount
+                let url;
+                switch(walletName.toLowerCase()) {
+                    case 'dana':
+                        url = `https://buylink.id/store/share?product=dana${amount/1000}`;
+                        break;
+                    case 'gopay':
+                        url = `https://buylink.id/store/share?product=go${amount/1000}`;
+                        break;
+                    case 'ovo':
+                        url = `https://buylink.id/store/share?product=ovo${amount/1000}`;
+                        break;
+                    case 'linkaja':
+                        url = `https://buylink.id/store/share?product=linkaja${amount/1000}`;
+                        break;
+                    case 'shopeepay':
+                        url = `https://buylink.id/store/share?product=shopeepay${amount/1000}`;
+                        break;
+                    case 'maxim':
+                        url = `https://buylink.id/store/share?product=maxim${amount/1000}`;
+                        break;
+                    default:
+                        url = 'https://buylink.id/store';
+                }
+
+                // Open URL in new tab
+                window.open(url, '_blank');
+                
+                // Close the modal
+                closeModal();
+            }
+        });
+
+        // Add click handler to close modal when clicking outside
+        document.getElementById('modalOverlay').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

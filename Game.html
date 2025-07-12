@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./images/extension_icon (1).png" type="image/png">
+        <link rel="apple-touch-icon" href="./images/extension_icon (1).png">
+        <meta name="description" content="iCheap - Digital Store for E-Wallet, Game Topup, and Premium Apps. Fast, Secure, and Affordable Services.">
+        <meta name="keywords" content="iCheap, Digital Store, Top Up E-Wallet, Game Topup, Premium Apps, Fast Service, Secure Payment, Convert E-Wallet">
+        <meta name="author" content="iCheap Team">
+        <meta name="theme-color" content="#090909"> 
+        <title>iCheap - Digital Store</title>
+      <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <a href="#" class="store-logo">Game</a>
+            <div style="position: relative;">
+                <button class="menu-button" onclick="toggleDropdown()"><i class="fa-solid fa-ellipsis"></i></button>
+                <div class="dropdown" id="dropdown">
+                    <a href="https://t.me/ihelpcenter" class="dropdown-item">Bantuan?
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </a>
+                    <a href="https://take.app/id/icheap/reviews" class="dropdown-item">Testimoni
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+                <section onclick="redirectToGame()">
+    <div class="wallet-cards">
+        <div class="wallet-card">
+            <img src="./images/extension_icon (15).png" alt="DANA" class="wallet-icon">
+            <span class="wallet-name">GAME</span>
+        </div>
+    </div>
+</section>
+<script>
+    function redirectToGame() {
+        window.location.href = 'https://buylink.id/store/?type=game';
+    }
+
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown');
+        dropdown.classList.toggle('show');
+    }
+    document.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('dropdown');
+        if (!event.target.matches('.menu-button') && !event.target.closest('.dropdown')) {
+            dropdown.classList.remove('show');
+        }
+    });
+
+    feather.replace();
+</script>
+</body>
+</html>

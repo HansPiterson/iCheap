@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/extension_icon (1).png" type="image/png">
+    <link rel="apple-touch-icon" href="./images/favicon.png">
+    <meta name="description" content="iCheap - Digital Store for E-Wallet, Game Topup, and Premium Apps. Fast, Secure, and Affordable Services.">
+    <meta name="keywords" content="iCheap, Digital Store, Top Up E-Wallet, Game Topup, Premium Apps, Fast Service, Secure Payment, Convert E-Wallet">
+    <meta name="author" content="iCheap Team">
+    <meta name="theme-color" content="#090909"> 
+    <title>iCheap - Digital Store</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="store-logo">iCheap</a>
+        <div style="position: relative;">
+            <button class="menu-button" onclick="toggleDropdown()"><i class="fa-solid fa-ellipsis"></i></button>
+            <div class="dropdown" id="dropdown">
+                <a href="https://t.me/ihelpcenter" class="dropdown-item">Bantuan?
+                    <i class="fa-solid fa-location-arrow"></i>
+                </a>
+                <a href="https://take.app/id/icheap/reviews" class="dropdown-item">Testimoni
+                    <i class="fa-solid fa-location-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title"> Mitra Terpercaya untuk Kebutuhan Top Up dan Pembayaran Digital Anda. </h1>
+            <p class="hero-subtitle">Akses semua toko kami disini</p>
+            <a href="#features" class="cta-button">Explore Now</a>
+        </section>
+
+        <section class="features" id="features">
+            <div class="feature-card" onclick="openModal('ewallet')">
+                <div class="feature-icon"><img src="./images/extension_icon (14).png" alt="dana" loading="lazy"></div>
+                <h3 class="feature-title">Topup E-Wallet</h3>
+                <p class="feature-description">Proses dibawah 1 menit! dengan Biaya Admin termurah.</p>
+            </div>
+            
+            <div class="feature-card" onclick="openModal('growtopia')">
+                <div class="feature-icon"><img src="./images/extension_icon (15).png" alt="growtopia"></div>
+                <h3 class="feature-title">Topup Game</h3>
+                <p class="feature-description">Jasa Topup Game Pilihan, Proses cepat dan aman</p>
+            </div>
+            
+            <div class="feature-card" onclick="openModal('roblox')">
+                <div class="feature-icon"><img src="./images/extension_icon (19).png" alt="Roblox" loading="lazy"></div>
+                <h3 class="feature-title">Topup Robux</h3>
+                <p class="feature-description">Garansi Robux Masuk 100% Aman dan Cepat</p>
+            </div>
+
+            <div class="feature-card" onclick="openModal('tiktok')">
+                <div class="feature-icon"><img src="./images/extension_icon (16).png" alt="Tiktok" loading="lazy"></div>
+                <h3 class="feature-title">Topup TikTok</h3>
+                <p class="feature-description">Tingkatkan Jam Tayang Dan Suka Akun Kamu</p>
+            </div>
+
+            <div class="feature-card" onclick="openModal('convert')">
+                <div class="feature-icon"><img src="./images/extension_icon (18).png" alt="convert" loading="lazy"></div>
+                <h3 class="feature-title">Convert E-Wallet</h3>
+                <p class="feature-description">
+                    Convert E-Wallet dengan mudah dan cepat.
+                </p>
+            </div>
+
+            <div class="feature-card" onclick="openModal('premium')">
+                <div class="feature-icon"><img src="./images/extension_icon (20).png" alt="Premium" loading="lazy"></div>
+                <h3 class="feature-title">Premium Apps</h3>
+                <p class="feature-description">Kebutuhan Aplikasi Berbayar Dengan Harga Yang Lebih Murah.</p>
+            </div>
+        </section>
+    </main>
+    <div class="container">
+        <h1 class="FAQ-title">Frequently Ask Question (FAQ)</h1>
+        <div class="slidedown-item">
+            <div class="slidedown-header">
+                <div class="slidedown-title">Apa itu iCheap?</div>
+                <div class="chevron">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="slidedown-content">
+                <div class="slidedown-content-inner">
+                    iCheap Adalah platform yang menyediakan layanan top up dan pembayaran digital dengan proses cepat dan biaya admin termurah di Indonesia. Kami menawarkan berbagai layanan seperti  <a href="#features" class="FAQ-TEXT">top up e-wallet</a>, game, dan aplikasi premium dengan garansi 100% masuk. <a href="#features" class="FAQ-TEXT">Transaksi</a> kami aman dan terpercaya, didukung oleh customer service yang siap membantu 24/7.
+                </div>
+            </div>
+        </div>
+
+        <div class="slidedown-item">
+            <div class="slidedown-header">
+                <div class="slidedown-title">Berapa lama proses transaksi di iCheap?</div>
+                <div class="chevron">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="slidedown-content">
+                <div class="slidedown-content-inner">
+                    Proses transaksi di iCheap tergantung pada proses antrian. Biasanya hanya membutuhkan waktu kurang dari 1 menit. Kami menggunakan sistem otomatis untuk memastikan transaksi Anda diproses dengan efisien dan tanpa penundaan. Namun, waktu proses dapat bervariasi tergantung pada jenis layanan yang Anda pilih. Jika ada kendala atau pertanyaan,  <a href="#features" class="FAQ-TEXT">customer service </a>kami siap membantu Anda 24/7.
+                </div>
+            </div>
+        </div>
+
+        <div class="slidedown-item">
+            <div class="slidedown-header">
+                <div class="slidedown-title">Apakah iCheap Aman?</div>
+                <div class="chevron">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="slidedown-content">
+                <div class="slidedown-content-inner">
+                    Ya, iCheap adalah platform yang aman dan terpercaya. Kami menggunakan sistem keamanan yang canggih untuk melindungi data dan transaksi Anda. Semua transaksi dienkripsi dan diproses melalui server yang aman. Untuk transaksi E-Wallet sudah terintegrasi ke pembayaran nasional.
+                </div>
+            </div>
+        </div>
+
+        <div class="slidedown-item">
+            <div class="slidedown-header">
+                <div class="slidedown-title">Bagaimana Cara Order?</div>
+                <div class="chevron">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="slidedown-content">
+                <div class="slidedown-content-inner">
+                    Untuk melakukan order di iCheap, Anda dapat mengikuti langkah-langkah berikut:
+                    <ol>
+                        <li>Pilih layanan yang ingin Anda gunakan dari daftar layanan kami.</li>
+                        <li>Klik tombol "Beli Sekarang" pada layanan yang dipilih.</li>
+                        <li>Ikuti instruksi yang diberikan untuk menyelesaikan transaksi.</li>
+                        <li>Setelah pembayaran berhasil, tunggu konfirmasi dari sistem kami.</li>
+                    </ol>
+                    Jika Anda mengalami kesulitan, jangan ragu untuk menghubungi customer service kami melalui <a href="https://t.me/ihelpcenter" class="FAQ-TEXT">Telegram</a>.
+                </div>
+            </div>
+        </div>
+
+        <div class="slidedown-item">
+            <div class="slidedown-header">
+                <div class="slidedown-title">Tidak menemukan pertanyaanmu?</div>
+                <div class="chevron">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="slidedown-content">
+                <div class="slidedown-content-inner">
+                    Jika Anda tidak menemukan pertanyaan yang sesuai, Anda dapat menghubungi customer service kami melalui <a href="https://t.me/ihelpcenter" class="FAQ-TEXT">Telegram</a>. Kami siap membantu menjawab pertanyaan Anda dan memberikan informasi lebih lanjut tentang layanan kami. Jangan ragu untuk menghubungi kami kapan saja, tim kami akan segera merespons permintaan Anda.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="ios-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-branding">
+                    <h3>iCheap</h3>
+                    <p class="footer-tagline">Your Trusted Digital Payment Partner</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Contact Us</h4>
+                        <div class="social-links">
+                            <a href="https://t.me/icheapdigitalstore" target="_blank" class="social-link">
+                                <i class="fa-brands fa-telegram"></i>
+                                <span>Telegram</span>
+                            </a>
+                            <a href="https://www.instagram.com/icheapdigitalstore/" target="_blank" class="social-link">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="mailto:icheapdigitalstore@gmail.com" class="social-link">
+                                <i class="fa-regular fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 iCheap. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+        <!-- Modal Popup -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+        <div class="modal" id="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Topup E-Wallet</h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-icon" id="modalIcon">
+                    <img src="./data-image/Dana.png" alt="service" loading="lazy">
+                </div>
+                <div class="modal-description" id="modalDescription">
+                    Topup E-Wallet dengan mudah dan cepat. Proses otomatis dalam hitungan detik dengan biaya admin termurah di Indonesia.
+                </div>
+                <div class="modal-features" id="modalFeatures">
+                    <h4>Keunggulan:</h4>
+                    <ul>
+                        <li>Proses cepat dibawah 1 menit</li>
+                        <li>Biaya admin termurah</li>
+                        <li>Tersedia 24/7</li>
+                        <li>Garansi uang kembali</li>
+                    </ul>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="buyNow()">Beli Sekarang</button>
+                    <button class="btn-secondary" onclick="closeModal()">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+
+        // Modal data
+        const modalData = {
+            ewallet: {
+                title: "Topup E-Wallet",
+                icon: "./images/extension_icon (14).png",
+                description: "Topup E-Wallet dengan mudah dan cepat. Proses otomatis dalam hitungan detik dengan biaya admin termurah di Indonesia.",
+                features: [
+                    "Proses cepat dibawah 1 menit",
+                    "Biaya admin termurah",
+                    "Tersedia 24/7",
+                    "Garansi uang kembali",
+                    "Dana, OVO, Gopay, ShopeePay, LinkAja, dan lainnya"
+                ],
+                link: "./E-wallet.html"
+            },
+            growtopia: {
+                title: "Topup Game",
+                icon: "./images/extension_icon (15).png",
+                description: "Beli Diamond Game Tanpa Ribet Dan Tanpa Nunggu Lama!, Transaksi Instant & Aman.",
+                features: [
+                    "Harga paling kompetitif",
+                    "Pengiriman instan",
+                    "Stok selalu tersedia",
+                    "Customer service 24/7",
+                    "Mobile Legends, PUBG Mobile, Free Fire, dan lainnya"
+                ],
+                link: "./Game.html"
+            },
+            roblox: {
+                title: "Topup Robux",
+                icon: "https://img.icons8.com/?size=100&id=zemhCLrteb5v&format=png&color=000000",
+                description: "Topup Robux dengan garansi 100% masuk. Proses cepat, aman, dan terpercaya untuk semua kebutuhan gaming Anda.",
+                features: [
+                    "Garansi 100% Robux masuk",
+                    "Proses super cepat",
+                    "Harga terjangkau",
+                    "Support 24/7",
+                    "Via Gamepass Atau Voucher"
+                ],
+                link: "https://t.me/chessyss"
+            },
+            tiktok: {
+                title: "Topup Tiktok",
+                icon: "./images/extension_icon (16).png",
+                description: "Tingkatkan Jam Tayang Dan Suka Akun Kamu.",
+                features: [
+                    "Garansi 100% masuk",
+                    "Proses super cepat",
+                    "Harga terjangkau",
+                    "Support 24/7",
+                    "Up Views, Up Likes, Up Followers"
+                ],
+                link: "https://t.me/icheapdigitalstore"
+            },
+            convert: {
+                title: "Convert E-Wallet",
+                icon: "./images/extension_icon (18).png",
+                description: "Convert E-Wallet dengan mudah dan cepat. Proses otomatis dalam hitungan detik dengan biaya admin termurah di Indonesia.",
+                features: [
+                    "Garansi 100% masuk",
+                    "Proses super cepat",
+                    "Harga terjangkau",
+                    "Support 24/7",
+                    "DANA, OVO, Gopay, ShopeePay, LinkAja, dan lainnya",
+                    "Contoh Convert: DANA ke OVO, OVO ke Gopay, Gopay ke ShopeePay"
+                ],
+                link: "https://t.me/icheapdigitalstore"
+            },
+            premium: {
+                title: "Premium Apps",
+                icon: "./images/extension_icon (20).png",
+                description: "Kebutuhan Aplikasi Berbayar Dengan Harga Yang Lebih Murah.",
+                features: [
+                    "Garansi 100% masuk",
+                    "Proses super cepat",
+                    "lifetime guarantee 30 days",
+                    "Harga terjangkau",
+                    "Support 24/7",
+                    "Tersedia berbagai aplikasi premium seperti Spotify, Netflix, dan lainnya"
+                ],
+                link: "https://t.me/icheapdigitalstore"
+            },
+        };
+
+        function openModal(type) {
+            const data = modalData[type];
+            const modal = document.getElementById('modal');
+            const overlay = document.getElementById('modalOverlay');
+            
+            // Update modal content
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalIcon').innerHTML = `<img src="${data.icon}" alt="${data.title}">`;
+            document.getElementById('modalDescription').textContent = data.description;
+            
+            // Update features
+            const featuresHTML = data.features.map(feature => `<li>${feature}</li>`).join('');
+            document.getElementById('modalFeatures').innerHTML = `<h4>Keunggulan:</h4><ul>${featuresHTML}</ul>`;
+            
+            // Store the link for buy button
+            modal.setAttribute('data-link', data.link);
+            
+            // Show modal with animation
+            overlay.classList.add('active');
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 100);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            const overlay = document.getElementById('modalOverlay');
+            
+            modal.classList.remove('active');
+            setTimeout(() => {
+                overlay.classList.remove('active');
+            }, 300);
+        }
+
+        function buyNow() {
+            const modal = document.getElementById('modal');
+            const link = modal.getAttribute('data-link');
+            window.open(link, '_blank');
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add smooth entrance animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+         // Fungsi untuk toggle slidedown
+        function toggleSlidedown(item) {
+            const isActive = item.classList.contains('active');
+            
+            // Tutup semua slidedown yang terbuka
+            document.querySelectorAll('.slidedown-item').forEach(slidedown => {
+                slidedown.classList.remove('active');
+            });
+            
+            // Buka slidedown yang diklik jika sebelumnya tertutup
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Event listeners untuk semua slidedown
+        document.querySelectorAll('.slidedown-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const slidedownItem = this.closest('.slidedown-item');
+                toggleSlidedown(slidedownItem);
+            });
+        });
+
+        // Tambahkan efek haptic feedback untuk iOS (jika tersedia)
+        if ('vibrate' in navigator) {
+            document.querySelectorAll('.slidedown-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    navigator.vibrate(10);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
